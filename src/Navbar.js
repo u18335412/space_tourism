@@ -9,7 +9,7 @@ const StyledLink = (props) => (
     <button className=" md:text-sm xl:text-base md:mr-[2.313rem] xl:mr-[3rem] inline text-white relative group uppercase">
       <span className=" font-bold pr-[0.75rem]">{props.num}</span>
       <span className="w-full">{props.children}</span>
-      <div className=" w-full h-1 opacity-0 group-focus:opacity-100  group-hover:opacity-50 bg-white  absolute -bottom-9 transition-opacity"></div>
+      <div className=" w-full h-1 opacity-0 group-focus:opacity-100  group-hover:opacity-50 bg-white  absolute -bottom-9 transition-opacity hidden md:flex"></div>
     </button>
   </Link>
 );
