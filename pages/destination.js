@@ -1,4 +1,3 @@
-import Image from "next/image";
 import destinationBackground from "/images/destination.svg";
 import moonImage from "/images/moon.svg";
 import marsImage from "/images/mars.svg";

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { useState } from "react";
 import data from "/data.json";
 import crewBackground from "/assets/crew/background-crew-desktop.jpg";

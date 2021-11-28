@@ -1,4 +1,3 @@
-import Image from "next/image";
 import logo from "/images/logo.svg";
 import Link from "next/link";
 import hamburger from "/assets/shared/icon-hamburger.svg";
