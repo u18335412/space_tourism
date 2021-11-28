@@ -1,82 +1,40 @@
-import Head from 'next/head'
+import Navbar from "/src/Navbar.js";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
-
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
-            pages/index.js
-          </code>
-        </p>
-
-        <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+    <div className="w-screen">
+      <div className=" absolute top-0 w-screen h-screen bg-darkBlue">
+        <img
+          src={"/assets/home/background-home-desktop.jpg"}
+          className=" w-full h-screen fixed"
+        ></img>
+      </div>
+      <div className="  items-center text-center xl:text-left flex-col xl:flex-row flex  absolute  text-white justify-between w-screen xl:px-[10.313rem] top-[7rem] md:top-[12.625rem] xl:top-[24.188rem]">
+        <div className=" ">
+          <h5 className=" md:text-[1.25rem] font-normal uppercase text-base text-lightBlue font-barlowCondensed xl:text-[1.75rem] tracking-[0.295rem]">
+            So, you want to travel to
+          </h5>
+          <h1 className="font-bellefair uppercase text-[5rem] md:text-[9.375rem]">
+            Space
+          </h1>
+          <p className=" md:px-[9.938rem] xl:px-0 md:text-base xl:w-[27.75rem] xl:text-lg text-[0.938rem] text-lightBlue leading-[1.563] px-[1.5rem] md:leading-[1.75rem]">
+            Let’s face it; if you want to go to space, you might as well
+            genuinely go to outer space and not hover kind of on the edge of it.
+            Well sit back, and relax because we’ll give you a truly out of this
+            world experience!
+          </p>
         </div>
-      </main>
-
-      <footer className="flex items-center justify-center w-full h-24 border-t">
-        <a
-          className="flex items-center justify-center"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
-        </a>
-      </footer>
+        <div className=" relative group cursor-pointer flex justify-center xl:justify-end">
+          <div className=" flex items-center justify-center xl:w-[28.125rem] xl:h-[28.125rem] bg-white opacity-0 xl:group-hover:opacity-[0.1] transition-opacity rounded-full"></div>
+          <Link href="destination">
+            <div className=" absolute top-[5.063rem] xl:left-[5.525rem] xl:bottom-0 xl:top-[5.525rem] w-[9.375rem] h-[9.375rem] md:w-[15.125rem] md:h-[15.125rem] xl:w-[17.125rem] xl:h-[17.125rem] bg-white rounded-full uppercase flex items-center justify-center font-bellefair text-darkBlue opacity-100 ">
+              <h4>explore</h4>
+            </div>
+          </Link>
+        </div>
+      </div>
+      <div className="bg-lightBlue"></div>
     </div>
-  )
+  );
 }

@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+    html {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    *,
+    *:before,
+    *:after {
+        box-sizing: inherit;
+    }
+
+    h1 {
+        font-size: 9.375rem;
+    }
+
+    h2 {
+        font-size: 6.25rem;
+    }
+
+    h3 {
+        font-size: 3.5rem;
+    }
+
+    h4 {
+        font-size: 2rem;
+    }
+
+    h5 {
+        font-size: 1.75rem;
+    }
+
+}
+
+@layer utilities {
+    .bb {
+        background: rgba(255, 255, 255, 0.04);
+        backdrop-filter: blur(81.5485px);
+    }
+}
