@@ -46,15 +46,15 @@ const Navbar = () => {
           </StyledLink>
         </div>
         <div className="md:hidden pr-[24px]">
-          <Image
-            src={hamburger}
+          <img
+            src={"/assets/shared/icon-hamburger.svg"}
             className=" "
             onClick={() => {
               setMenuShown === "flex"
                 ? setMenuShown("hidden")
                 : setMenuShown("flex");
             }}
-          ></Image>
+          ></img>
         </div>
       </div>
       <AnimatePresence exitBeforeEnter>

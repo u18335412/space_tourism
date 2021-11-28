@@ -1,8 +1,3 @@
-import destinationBackground from "/images/destination.svg";
-import moonImage from "/images/moon.svg";
-import marsImage from "/images/mars.svg";
-import titanImage from "/images/titan.svg";
-import europaImage from "/images/europa.svg";
 import { motion, AnimatePresence } from "framer-motion";
 import data from "/data.json";
 import { useEffect, useState } from "react";
@@ -65,16 +60,10 @@ const DestinationTab = (props) => {
 };
 
 const Destination = () => {
-  const destinationImages = [moonImage, marsImage, europaImage, titanImage];
   const [destination, setDestination] = useState(data.destinations[0]);
-
-  const [destinationImage, setDestinationImage] = useState(
-    destinationImages[0]
-  );
 
   const updateDestination = (val) => {
     setDestination((d) => data.destinations[val]);
-    setDestinationImage((d) => destinationImages[val]);
   };
 
   return (

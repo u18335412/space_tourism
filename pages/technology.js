@@ -40,12 +40,12 @@ const Tech = () => {
   return (
     <div>
       <div className=" absolute top-0 w-screen h-[73rem] xl:h-screen white">
-        <Image
-          src={techBackgroundImage}
+        <img
+          src={"/assets/technology/background-technology-desktop.jpg"}
           alt="space image"
           layout="fill"
           objectFit="cover"
-        ></Image>
+        ></img>
       </div>
       <div className=" flex-col xl:flex-row text-center md:text-left  flex absolute text-white justify-between w-screen  md:px-[0rem]  xl:pl-[10.406rem] 2xl:pr-[8.563rem] top-[5.5rem] md:top-[8.5rem] xl:top-[13.25rem] h-[36rem]">
         <div className="w-full px-[24px] md:px-0">

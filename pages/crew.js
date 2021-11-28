@@ -1,10 +1,5 @@
 import { useState } from "react";
 import data from "/data.json";
-import crewBackground from "/assets/crew/background-crew-desktop.jpg";
-import douglasImage from "/assets/crew/image-douglas-hurley.png";
-import anoushehImage from "/assets/crew/image-anousheh-ansari.png";
-import markImage from "/assets/crew/image-mark-shuttleworth.png";
-import victorImage from "/assets/crew/image-victor-glover.png";
 import { motion, AnimatePresence } from "framer-motion";
 
 const CrewTabLink = (props) => {
