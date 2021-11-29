@@ -43,7 +43,7 @@ const Tech = () => {
         <img
           src={"/assets/technology/background-technology-desktop.jpg"}
           alt="space image"
-          className=" w-full fixed"
+          className=" w-full h-screen fixed"
         ></img>
       </div>
       <div className=" flex-col xl:flex-row text-center md:text-left  flex absolute text-white justify-between w-screen  md:px-[0rem]  xl:pl-[10.406rem] 2xl:pr-[8.563rem] top-[5.5rem] md:top-[8.5rem] xl:top-[13.25rem] h-[36rem]">
