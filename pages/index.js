@@ -7,10 +7,10 @@ export default function Home() {
       <div className=" absolute top-0 w-screen h-screen bg-darkBlue">
         <img
           src={"/assets/home/background-home-desktop.jpg"}
-          className=" w-full h-screen fixed"
+          className=" w-full h-full fixed"
         ></img>
       </div>
-      <div className="  items-center text-center xl:text-left flex-col xl:flex-row flex  absolute  text-white justify-between w-screen xl:px-[10.313rem] top-[7rem] md:top-[12.625rem] xl:top-[24.188rem]">
+      <div className=" text-center xl:text-left flex-col xl:flex-row flex  absolute  text-white justify-between w-screen xl:px-[10.313rem] top-[7rem] md:top-[12.625rem] xl:top-[24.188rem]">
         <div className=" ">
           <h5 className=" md:text-[1.25rem] font-normal uppercase text-base text-lightBlue font-barlowCondensed xl:text-[1.75rem] tracking-[0.295rem]">
             So, you want to travel to
