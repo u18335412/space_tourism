@@ -6,7 +6,9 @@ import { motion, AnimatePresence } from "framer-motion";
 const StyledLink = (props) => (
   <Link href={props.link}>
     <button className=" md:text-sm xl:text-base md:mr-[2.313rem] xl:mr-[3rem] inline text-white relative group uppercase">
-      <span className=" font-bold pr-[0.75rem]">{props.num}</span>
+      <span className=" font-bold pr-[0.75rem]" airia-hidden="true">
+        {props.num}
+      </span>
       <span className="w-full">{props.children}</span>
       <div className=" w-full h-1 opacity-0 group-focus:opacity-100  group-hover:opacity-50 bg-white  absolute -bottom-9 transition-opacity hidden md:flex"></div>
     </button>
@@ -17,7 +19,7 @@ const Navbar = () => {
 
   return (
     <div className="relative">
-      <div className="flex  pl-[24px] items-center justify-between  w-full md:h-10 xl:mt-[4.5rem] font-barlowCondensed">
+      <header className="flex  pl-[24px] items-center xl:items-start justify-between xl:justify-start w-full md:h-10 xl:mt-[2.5rem] font-barlowCondensed">
         <div className="bg w-1/2 h-[6rem] flex items-center md:pl-[2.406rem] xl:pl-[3.438rem] bg">
           <Link href="/">
             <div className="cursor-pointer ">
@@ -27,24 +29,32 @@ const Navbar = () => {
               ></img>
             </div>
           </Link>
-          <div className=" relative w-full flex flex-grow">
-            <span className=" bg-white invisible xl:visible xl:w-[100%] 2xl:w-[110%]  left-[64px] h-[0.063rem] absolute opacity-25 z-10"></span>
+          <div className=" relative w-full">
+            <span className=" bg-white invisible xl:visible xl:w-full  left-[64px] h-[0.063rem] absolute opacity-25 z-10"></span>
           </div>
         </div>
-        <div className=" hidden md:text-sm md:pl-[3rem] xl:pl-[7.688rem] bb md:md:w-[28.125rem] xl:w-[51.875rem] h-[6rem] text-white right-0 md:flex items-center">
-          <StyledLink num="00" link="/">
-            Home
-          </StyledLink>
-          <StyledLink num="01" link="destination">
-            Destination
-          </StyledLink>
-          <StyledLink num="02" link="crew">
-            Crew
-          </StyledLink>
-          <StyledLink num="03" link="technology">
-            Technology
-          </StyledLink>
-        </div>
+        <ul className=" hidden md:text-sm md:pl-[3rem] xl:pl-[7.688rem] bb  xl:w-[51.875rem] 2xl:w-[60rem] h-[6rem] text-white right-0 md:flex items-center">
+          <li>
+            <StyledLink num="00" link="/">
+              Home
+            </StyledLink>
+          </li>
+          <li>
+            <StyledLink num="01" link="destination">
+              Destination
+            </StyledLink>
+          </li>
+          <li>
+            <StyledLink num="02" link="crew">
+              Crew
+            </StyledLink>
+          </li>
+          <li>
+            <StyledLink num="03" link="technology">
+              Technology
+            </StyledLink>
+          </li>
+        </ul>
         <div className="md:hidden pr-[24px]">
           <img
             src={"/assets/shared/icon-hamburger.svg"}
@@ -56,7 +66,7 @@ const Navbar = () => {
             }}
           ></img>
         </div>
-      </div>
+      </header>
       <AnimatePresence exitBeforeEnter>
         <motion.div
           key={menuShown}
