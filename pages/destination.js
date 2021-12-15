@@ -1,6 +1,6 @@
-import { motion, AnimatePresence } from "framer-motion";
+const { motion, AnimatePresence } = require("framer-motion");
 import data from "/data.json";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const DestinationTabLink = (props) => {
   return (
@@ -8,7 +8,7 @@ const DestinationTabLink = (props) => {
       onClick={() => {
         props.update(props.destIdx);
       }}
-      className=" flex text-sm md:text-base flex-col uppercase group relative font-barlowCondensed"
+      className="relative flex flex-col text-sm uppercase md:text-base group font-barlowCondensed"
     >
       <span>{props.children}</span>
       <span className=" w-full h-[0.188rem] bg-white opacity-0 transition-opacity group-hover:opacity-50 group-focus:opacity-100  bottom-0 "></span>
@@ -41,7 +41,7 @@ const DestinationTab = (props) => {
           <div className=" bg-lightBlue opacity-25 w-full h-[1px] mt-[54px]"></div>
         </div>
         <div className="  justify-center xl:justify-start flex flex-col md:flex-row mt-[26px]">
-          <div className="uppercase flex flex-col">
+          <div className="flex flex-col uppercase">
             <p className=" text-sm md:text-[0.875rem] font-barlowCondensed">
               avg. distance
             </p>
@@ -72,17 +72,17 @@ const Destination = () => {
         <img
           src={"/assets/destination/background-destination-desktop.jpg"}
           alt="space image"
-          className=" w-full h-full object-fill hidden xl:block fixed"
+          className="fixed hidden object-fill w-full h-full xl:block"
         ></img>
         <img
           src={"/assets/destination/background-destination-tablet.jpg"}
           alt="space image"
-          className=" w-full h-full object-fill hidden md:block xl:hidden fixed"
+          className="fixed hidden object-fill w-full h-full md:block xl:hidden"
         ></img>
         <img
           src={"/assets/destination/background-destination-mobile.jpg"}
           alt="space image"
-          className=" w-full h-full object-fill md:hidden fixed"
+          className="fixed object-fill w-full h-full md:hidden"
         ></img>
       </div>
       <div className=" flex absolute text-white justify-center md:justify-between w-screen md:px-[2.406rem] xl:px-[10.406rem] top-[5.5rem] md:top-[8.5rem] xl:top-[13.25rem] h-[36rem]">

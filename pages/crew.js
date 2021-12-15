@@ -1,6 +1,6 @@
 import { useState } from "react";
 import data from "/data.json";
-import { motion, AnimatePresence } from "framer-motion";
+const { motion, AnimatePresence } = require("framer-motion");
 
 const CrewTabLink = (props) => {
   return (
@@ -36,11 +36,11 @@ const Crew = () => {
       <div className=" absolute top-0 w-full md:h-[80rem] xl:h-screen">
         <img
           src={"/assets/crew/background-crew-desktop.jpg"}
-          className=" w-screen h-screen fixed"
+          className="fixed w-screen h-screen "
         ></img>
       </div>
       <div className=" flex-col xl:flex-row flex absolute text-white text-center md:text-left md:justify-between w-screen px-[1.5rem]  md:px-[2.406rem] xl:px-[10.406rem] top-[5.5rem] md:top-[8.5rem] xl:top-[13.25rem] h-[36rem]">
-        <div className=" w-full">
+        <div className="w-full ">
           <p className=" hidden md:block uppercase  md:text-[1.25rem] xl:text-[1.75rem] md:tracking-[0.211rem] xl:tracking-[0.295rem] font-barlowCondensed">
             <span
               aria-hidden
@@ -65,7 +65,7 @@ const Crew = () => {
             <CrewTab update={update} crew={data.crew}></CrewTab>
           </div>
         </div>
-        <div className="w-full  flex order-first md:order-last justify-center xl:justify-end md:mt-[2.5rem]">
+        <div className="w-full flex order-first md:order-last justify-center xl:justify-end md:mt-[2.5rem]">
           <AnimatePresence exitBeforeEnter>
             <motion.div
               key={crewMember.name}

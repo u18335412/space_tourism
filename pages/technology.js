@@ -1,7 +1,6 @@
 import { useState } from "react";
 import data from "/data.json";
-import techBackgroundImage from "/assets/technology/background-technology-desktop.jpg";
-import { motion, AnimatePresence } from "framer-motion";
+const { motion, AnimatePresence } = require("framer-motion");
 
 const TechTabLink = (props) => {
   return (
@@ -43,10 +42,10 @@ const Tech = () => {
         <img
           src={"/assets/technology/background-technology-desktop.jpg"}
           alt="space image"
-          className=" w-full h-screen fixed"
+          className="fixed w-full h-screen "
         ></img>
       </div>
-      <div className=" flex-col xl:flex-row text-center md:text-left  flex absolute text-white justify-between w-screen  md:px-[0rem]  xl:pl-[10.406rem] 2xl:pr-[8.563rem] top-[5.5rem] md:top-[8.5rem] xl:top-[13.25rem] h-[36rem]">
+      <div className=" flex-col xl:flex-row text-center md:text-left flex absolute text-white justify-between w-screen  md:px-[0rem]  xl:pl-[10.406rem] 2xl:pr-[8.563rem] top-[5.5rem] md:top-[8.5rem] xl:top-[13.25rem] h-[36rem]">
         <div className="w-full px-[24px] md:px-0">
           <p className="invisible xl:visible uppercase md:text-[1.25rem] xl:text-[1.75rem] md:tracking-[0.211rem] xl:tracking-[0.295rem] font-barlowCondensed">
             <span className="  md:pr-[1.188rem] xl:pr-[1.75rem] font-bold opacity-25">
@@ -58,7 +57,7 @@ const Tech = () => {
             <div className="flex md:mt-[34px] xl:mt-[137px] flex-col items-center xl:items-start xl:flex-row">
               <TechTab update={update} technology={data.technology}></TechTab>
               <div className=" text-center xl:text-left xl:ml-[80px] ">
-                <p className="uppercase font-barlowCondensed text-sm md:text-base">
+                <p className="text-sm uppercase font-barlowCondensed md:text-base">
                   the teminology...
                 </p>
                 <h3 className="uppercase font-bellefair text-[1.5rem] md:text-[2.5rem] xl:text-[3.5rem]">
@@ -71,7 +70,7 @@ const Tech = () => {
             </div>
           </div>
         </div>
-        <div className=" order-first xl:order-last">
+        <div className="order-first xl:order-last">
           <p className="md:px-[2.406rem] md:mb-[3.75rem] md:visible xl:invisible uppercase  md:text-[1.25rem] xl:text-[1.75rem] md:tracking-[0.211rem] xl:tracking-[0.295rem] font-barlowCondensed">
             <span className="pr-[1rem] md:pr-[1.188rem] pr-[1.75rem font-bold opacity-25">
               0 3
@@ -93,7 +92,7 @@ const Tech = () => {
               ></img>
               <img
                 src={technology.images.landscape}
-                className=" xl:hidden w-full h-full"
+                className="w-full h-full xl:hidden"
               ></img>
             </motion.div>
           </AnimatePresence>

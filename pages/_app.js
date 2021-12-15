@@ -1,6 +1,6 @@
 import style from "/styles/globals.css";
 import Head from "next/head";
-import { motion } from "framer-motion";
+const { motion } = require("framer-motion");
 import Navbar from "/src/Navbar.js";
 
 function MyApp({ Component, pageProps, router }) {

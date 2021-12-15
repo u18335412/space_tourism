@@ -1,16 +1,17 @@
-import logo from "/images/logo.svg";
 import Link from "next/link";
-import hamburger from "/assets/shared/icon-hamburger.svg";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+const { motion, AnimatePresence } = require("framer-motion");
+import router from "next/router";
 const StyledLink = (props) => (
   <Link href={props.link}>
     <button className=" md:text-sm xl:text-base md:mr-[2.313rem] xl:mr-[3rem] inline text-white relative group uppercase">
-      <span className=" font-bold pr-[0.75rem]" airia-hidden="true">
+      <span className=" font-bold pr-[0.75rem]" aria-hidden="true">
         {props.num}
       </span>
       <span className="w-full">{props.children}</span>
-      <div className=" w-full h-1 opacity-0 group-focus:opacity-100  group-hover:opacity-50 bg-white  absolute -bottom-9 transition-opacity hidden md:flex"></div>
+      <div
+        className={`w-full h-1 opacity-0 group-focus:opacity-100  group-hover:opacity-50 bg-white  absolute -bottom-9 transition-opacity hidden md:flex`}
+      ></div>
     </button>
   </Link>
 );
@@ -29,7 +30,7 @@ const Navbar = () => {
               ></img>
             </div>
           </Link>
-          <div className=" relative w-full">
+          <div className="relative w-full ">
             <span className=" bg-white invisible xl:visible xl:w-full  left-[64px] h-[0.063rem] absolute opacity-25 z-10"></span>
           </div>
         </div>
@@ -58,7 +59,7 @@ const Navbar = () => {
         <div className="md:hidden pr-[24px]">
           <img
             src={"/assets/shared/icon-hamburger.svg"}
-            className=" "
+            className=""
             onClick={() => {
               setMenuShown === "flex"
                 ? setMenuShown("hidden")
