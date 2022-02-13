@@ -1,6 +1,6 @@
 const { motion, AnimatePresence } = require("framer-motion");
 import data from "/data.json";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const DestinationTabLink = (props) => {
   return (
@@ -13,6 +13,37 @@ const DestinationTabLink = (props) => {
       <span>{props.children}</span>
       <span className=" w-full h-[0.188rem] bg-white opacity-0 transition-opacity group-hover:opacity-50 group-focus:opacity-100  bottom-0 "></span>
     </button>
+  );
+};
+
+const DestinationImageComponent = ({ name, images }) => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    console.log("Rendered!!");
+    setLoading(false);
+  }, [name]);
+
+  return (
+    <>
+      <AnimatePresence exitBeforeEnter>
+        <motion.div
+          key={name}
+          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, x: 20 }}
+          exit={{ opacity: 0, x: -20 }}
+          transition={{ duration: 0.2 }}
+        >
+          {loading ? (
+            <h1 className="text-white">Loading</h1>
+          ) : (
+            <div className=" flex items-end w-[10.625rem] md:w-[20.625rem] xl:w-[42.375rem]">
+              <img src={images.webp} alt="planet image" />
+            </div>
+          )}
+        </motion.div>
+      </AnimatePresence>
+    </>
   );
 };
 
@@ -97,19 +128,10 @@ const Destination = () => {
       </div>
 
       <div className=" flex-col xl:flex-row items-center xl:items-start xl:text-left text-center flex absolute top-[8.688rem] md:top-[13.75rem] xl:top-[19.375rem] 2xl xl:pl-[14.375rem] xl:pr-[10.188rem]  text-white w-full justify-between">
-        <AnimatePresence exitBeforeEnter>
-          <motion.div
-            key={destination.name}
-            animate={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: 20 }}
-            exit={{ opacity: 0, x: -20 }}
-            transition={{ duration: 0.2 }}
-          >
-            <div className=" flex items-end w-[10.625rem] md:w-[20.625rem] xl:w-[42.375rem]">
-              <img src={destination.images.webp} alt="planet image" />
-            </div>
-          </motion.div>
-        </AnimatePresence>
+        <DestinationImageComponent
+          name={destination.name}
+          images={destination.images}
+        ></DestinationImageComponent>
         <DestinationTab
           update={updateDestination}
           data={destination}
