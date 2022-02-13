@@ -16,38 +16,38 @@ const DestinationTabLink = (props) => {
   );
 };
 
-const DestinationImageComponent = ({ name, images }) => {
-  const [loading, setLoading] = useState(true);
+const DestinationImageComponent = () => {
+  const [destination, setDestination] = useState(data.destinations[0]);
 
-  useEffect(() => {
-    console.log("Rendered!!");
-    setLoading(false);
-  }, [name]);
+  const updateDestination = (val) => {
+    setDestination((d) => data.destinations[val]);
+  };
 
   return (
     <>
       <AnimatePresence exitBeforeEnter>
         <motion.div
-          key={name}
+          key={destination.name}
           animate={{ opacity: 1, x: 0 }}
           initial={{ opacity: 0, x: 20 }}
           exit={{ opacity: 0, x: -20 }}
           transition={{ duration: 0.2 }}
         >
-          {loading ? (
-            <h1 className="text-white">Loading</h1>
-          ) : (
-            <div className=" flex items-end w-[10.625rem] md:w-[20.625rem] xl:w-[42.375rem]">
-              <img src={images.webp} alt="planet image" />
-            </div>
-          )}
+          <div className=" flex items-end w-[10.625rem] md:w-[20.625rem] xl:w-[42.375rem]">
+            <img src={destination.images.webp} alt="planet image" />
+          </div>
         </motion.div>
       </AnimatePresence>
+      <DestinationTab
+        update={updateDestination}
+        data={destination}
+      ></DestinationTab>
     </>
   );
 };
 
 const DestinationTab = (props) => {
+  console.log("Destination-Tab Render!");
   return (
     <>
       <div className="h-full xl:left-[52.031rem] top-0 mt-[1.625rem] md:mt-[3.313rem]  xl:w-[27.813rem]">
@@ -91,12 +91,7 @@ const DestinationTab = (props) => {
 };
 
 const Destination = () => {
-  const [destination, setDestination] = useState(data.destinations[0]);
-
-  const updateDestination = (val) => {
-    setDestination((d) => data.destinations[val]);
-  };
-
+  console.log("Destination Render!");
   return (
     <div>
       <div className=" absolute top-0 w-full md:h-[63rem] xl:h-screen">
@@ -128,14 +123,7 @@ const Destination = () => {
       </div>
 
       <div className=" flex-col xl:flex-row items-center xl:items-start xl:text-left text-center flex absolute top-[8.688rem] md:top-[13.75rem] xl:top-[19.375rem] 2xl xl:pl-[14.375rem] xl:pr-[10.188rem]  text-white w-full justify-between">
-        <DestinationImageComponent
-          name={destination.name}
-          images={destination.images}
-        ></DestinationImageComponent>
-        <DestinationTab
-          update={updateDestination}
-          data={destination}
-        ></DestinationTab>
+        <DestinationImageComponent></DestinationImageComponent>
       </div>
     </div>
   );
