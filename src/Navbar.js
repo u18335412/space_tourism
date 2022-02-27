@@ -2,6 +2,26 @@ import Link from "next/link";
 import { useState } from "react";
 const { motion, AnimatePresence } = require("framer-motion");
 import router from "next/router";
+
+const LINKS = [
+  {
+    name: "Home",
+    link: "/",
+  },
+  {
+    name: "Destination",
+    link: "destination",
+  },
+  {
+    name: "Crew",
+    link: "crew",
+  },
+  {
+    name: "Technology",
+    link: "technology",
+  },
+];
+
 const StyledLink = (props) => (
   <Link href={props.link}>
     <button className=" md:text-sm xl:text-base md:mr-[2.313rem] xl:mr-[3rem] inline text-white relative group uppercase">
@@ -15,6 +35,7 @@ const StyledLink = (props) => (
     </button>
   </Link>
 );
+
 const Navbar = () => {
   const [menuShown, setMenuShown] = useState("hidden");
 
@@ -35,26 +56,13 @@ const Navbar = () => {
           </div>
         </div>
         <ul className=" hidden md:text-sm md:pl-[3rem] xl:pl-[7.688rem] bb  xl:w-[51.875rem] 2xl:w-[60rem] h-[6rem] text-white right-0 md:flex items-center">
-          <li>
-            <StyledLink num="00" link="/">
-              Home
-            </StyledLink>
-          </li>
-          <li>
-            <StyledLink num="01" link="destination">
-              Destination
-            </StyledLink>
-          </li>
-          <li>
-            <StyledLink num="02" link="crew">
-              Crew
-            </StyledLink>
-          </li>
-          <li>
-            <StyledLink num="03" link="technology">
-              Technology
-            </StyledLink>
-          </li>
+          {LINKS.map(({ name, link }, idx) => {
+            return (
+              <StyledLink key={idx + name} num={`0${idx}`} link={link}>
+                {name}
+              </StyledLink>
+            );
+          })}
         </ul>
         <div className="md:hidden pr-[24px]">
           <img
@@ -73,13 +81,12 @@ const Navbar = () => {
           key={menuShown}
           animate={{ opacity: 1, x: 0 }}
           initial={{ opacity: 0, x: 0 }}
-          exit={{ opacity: 0, x: -10 }}
-          transition={{ duration: 0.2 }}
+          transition={{ duration: 0.4 }}
         >
           <div
             className={`${menuShown} md:hidden flex-col absolute top-0 right-0`}
           >
-            <div className="  pl-[32px] items-start flex-col gap-y-[32px] w-[15.875rem]  h-screen  bb  text-white flex font-barlowCondensed">
+            <div className="  pl-[32px] items-start flex-col gap-y-[32px] w-[15.875rem]  h-screen  bb transition-all text-white flex font-barlowCondensed">
               <div className=" flex justify-end w-full pt-[2.122rem] pr-[1.653rem]">
                 <img
                   src="/assets/shared/icon-close.svg"
@@ -91,20 +98,14 @@ const Navbar = () => {
                   }}
                 />
               </div>
-              <div className="pt-[7.375rem]">
-                <StyledLink num="00" link="/">
-                  Home
-                </StyledLink>
-              </div>
-              <StyledLink num="01" link="destination">
-                Destination
-              </StyledLink>
-              <StyledLink num="02" link="crew">
-                Crew
-              </StyledLink>
-              <StyledLink num="03" link="technology">
-                Technology
-              </StyledLink>
+              <div className="pt-[7.375rem]"></div>
+              {LINKS.map(({ name, link }, idx) => {
+                return (
+                  <StyledLink key={idx + name} num={`0${idx}`} link={link}>
+                    {name}
+                  </StyledLink>
+                );
+              })}
             </div>
           </div>
         </motion.div>
