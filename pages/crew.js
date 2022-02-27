@@ -71,6 +71,7 @@ const Crew = () => {
               key={crewMember.name}
               animate={{ opacity: 1, x: 0 }}
               initial={{ opacity: 0, x: 20 }}
+              exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.1 }}
               className=""
             >

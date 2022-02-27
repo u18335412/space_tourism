@@ -79,8 +79,9 @@ const Navbar = () => {
       <AnimatePresence exitBeforeEnter>
         <motion.div
           key={menuShown}
-          animate={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: 0 }}
+          animate={{ x: -20 }}
+          initial={{ x: -20 }}
+          exit={{ opacity: 0, x: -20 }}
           transition={{ duration: 0.4 }}
         >
           <div

@@ -83,6 +83,7 @@ const Tech = () => {
               animate={{ opacity: 1, x: 0 }}
               initial={{ opacity: 0, x: 0 }}
               transition={{ duration: 0.1 }}
+              exit={{ opacity: 0, x: -20 }}
               className=" mt-[2rem] md:mt-0 w-full"
             >
               <img

@@ -30,6 +30,7 @@ const DestinationImageComponent = () => {
           key={destination.name}
           animate={{ opacity: 1, x: 0 }}
           initial={{ opacity: 0, x: 20 }}
+          exit={{ opacity: 0, x: -20 }}
           transition={{ duration: 0.2 }}
         >
           <div className=" flex items-end w-[10.625rem] md:w-[20.625rem] xl:w-[42.375rem] xl:h-[445px]">
